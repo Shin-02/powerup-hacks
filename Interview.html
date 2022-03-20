@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Accordion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel = "stylesheet" href = "style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.main-wrapper{
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.faq-title h1{
+    margin: 3rem 0 2.4rem 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+.faq-content{
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 1rem;
+}
+.faq-right-content, .faq-left-content{
+    padding: 1.2rem;
+}
+.faq-left-content{
+    text-align: center;
+}
+.faq-left-content img{
+    width: 75%;
+    display: block;
+    margin: 1rem auto;
+}
+.faq-left-content p{
+    font-weight: 400;
+    opacity: 0.95;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+.faq-item{
+    margin-bottom: 1rem;
+}
+.faq-item-head{
+    color: rgb(7, 7, 7);
+    border-bottom: 2px solid rgba(218, 134, 86, 0.8);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(90deg, #f8b72a 0%, #fc3030 100%);
+    box-shadow: 0 0 5px 0 rgb(1, 52, 255);
+    opacity: 0.85;
+    padding: 0.6rem 1rem;
+    border-radius: 9px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.faq-item-head:hover{
+    box-shadow: 0 0 15px 0 rgb(34, 0, 255);
+}
+.faq-item-icon{
+    cursor: pointer;
+}
+.faq-item-body{
+    overflow: hidden;
+    max-height: 0;
+    background: rgba(67, 207, 181, 0.186);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.faq-item-body p{
+    font-weight: 300;
+    padding: 1rem;
+}
+.show-para{
+    max-height: 1000px; /* js related */
+}
+
+
+@media screen and (min-width: 800px){
+    .faq-left-content{
+        text-align: left;
+    }
+    .faq-left-content img{
+        margin-left: 0;
+    }
+    .faq-left-content p{
+        margin-left: 0;
+        max-width: 460px;
+    }
+    .faq-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+</style>
+
+</head>
+<body>
+    
+    <div class = "main-wrapper">
+        <div class = "container">
+            <div class = "faq-title"><h1 style="font-size:60px">Interview Preparation</h1></div>
+            <div class = "faq-content">
+                <div class = "faq-left-content">
+                    <img src = "interview.png">
+                    <p><b>An interview can be broadly seen as a formal meeting arranged to evaluate a prospective employee by obtaining his/her career-oriented details, like qualification and work-experience. An interview presents the applicants an opportunity to elaborate on certain components of their resumes and talk about their areas of expertise. It also tests their ability to think critically and independently.</b></p>
+            </div>
+
+                <div class = "faq-right-content">
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Tell me about yourself.</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            Unlike 80% of the candidates who ramble about their life story and personal matters, start with the present and explain how your qualifications match to what the interviewer is looking for, and how you are an ideal candidate for the job. This approach will help you stand out instantly from the rest of the aspirants and will help you build a rapport very early.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">What are your greatest strengths?</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            Most aspirants sound either too arrogant or humble while answering these questions, neither of which helps. The key skill here is to mention work-elated strengths along with their most recent and impressive examples respectively.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">What are your greatest weaknesses?</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            <p>
+                        First of all, there’s nothing “great” about a weakness, so that’s a trick question; it should be “What are your biggest weaknesses?”
+
+Second, being honest about your weaknesses might earn you brownie points on sincerity, however a candidate with weaknesses isn’t a charming prospect for any company. Many tackle this question by trying to present their excessive implementation of a positive quality as a negative feature.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Why should I hire you?</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            <p>Before answering any such question, do a thorough study of the position’s requirements and what skill-sets the job might need. This knowledge will help you immensely in matching your qualifications and experience with the job requirements, which in turn, enhances your image in the eyes of the HR and sets you apart from the competition.</p>
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Where do you see yourself five years from now?</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            The reason interviewers ask this question is to check your level of commitment to the job and company. They want to know if you are just filling in till a better opportunity comes along, or are you looking for a long-term association with the organization.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Why do you want to work at our company?</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            The deeper your research is on the company’s annual reports, the corporate newsletters, business contacts, partners, suppliers, advertisements and articles about the company in the trade press, the better chance you have at answering this question satisfactorily.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Questions on confidential matters.</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            Your interviewer may press you for this information for two reasons. First, to research the competition on their strategies, financial condition, etc. Second, to test your integrity to see if you can easily reveal confidential data. Never reveal anything truly confidential about a present or former employer, but politely explain the reason too.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Case Study Interview Questions</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            Case study based interview questions are unique because answering them requires identifying the root causes and developing an action plan based on a logical analysis.
+
+In Case Interviews, interviewers tend to not mention important figures and details. They want to see if you have a clear idea on the industry and on what assumption you will solve the problem. In these situations, it’s okay to consider assumed data, but they need to be based on facts and logic.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Role-Play Questions</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+
+Role-plays are considered opportunities to prove that you possess all the key interpersonal skills you have mentioned in your resume. They help employers to assess how you'll react in certain situations. During a role-play, the interviewer assumes the role of a customer/client and asks you to sell him an idea or a product.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Industry-Specific Interview Questions</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            Industry-specific questions are specific to the industry you are seeking employment in. These questions evaluate your educational skill sets, professional qualification, and employment experience, so prepare your answers after reviewing your performances, current assignments, and the achievements in projects that showcase your talent in the best possible way.
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src = "script.js"></script>
+
+    <script>
+        const faqItemHead = document.querySelectorAll('.faq-item-head');
+
+
+faqItemHead.forEach((head, index) => {
+    head.addEventListener('click', () => {
+        let icon = head.querySelector('.faq-item-icon').firstElementChild;
+        if(icon.className == "fa fa-chevron-down"){
+            head.nextElementSibling.classList.add('show-para');
+            icon.className = "fa fa-chevron-up";
+        } else if(icon.className == "fa fa-chevron-up"){
+            head.nextElementSibling.classList.remove('show-para');
+            icon.className = "fa fa-chevron-down";
+        }
+    });
+});
+
+</script>
+
+
+</body>
+</html>
