@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Accordion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel = "stylesheet" href = "style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.main-wrapper{
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.faq-title h1{
+    margin: 3rem 0 2.4rem 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+.faq-content{
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 1rem;
+}
+.faq-right-content, .faq-left-content{
+    padding: 1.2rem;
+}
+.faq-left-content{
+    text-align: center;
+}
+.faq-left-content img{
+    width: 75%;
+    display: block;
+    margin: 1rem auto;
+}
+.faq-left-content p{
+    font-weight: 400;
+    opacity: 0.95;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+.faq-item{
+    margin-bottom: 1rem;
+}
+.faq-item-head{
+    color: rgb(248, 248, 246);
+    border-bottom: 2px solid rgba(185, 218, 86, 0.8);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(90deg, #2a5af8 0%, #30eefc 100%);
+    box-shadow: 0 0 5px 0 rgba(238, 68, 38, 0.5);
+    opacity: 0.85;
+    padding: 0.6rem 1rem;
+    border-radius: 9px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.faq-item-head:hover{
+    box-shadow: 0 0 15px 0 rgb(255, 0, 0);
+}
+.faq-item-icon{
+    cursor: pointer;
+}
+.faq-item-body{
+    overflow: hidden;
+    max-height: 0;
+    background: rgba(67, 207, 181, 0.186);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.faq-item-body p{
+    font-weight: 300;
+    padding: 1rem;
+}
+.show-para{
+    max-height: 1000px; /* js related */
+}
+
+
+@media screen and (min-width: 800px){
+    .faq-left-content{
+        text-align: left;
+    }
+    .faq-left-content img{
+        margin-left: 0;
+    }
+    .faq-left-content p{
+        margin-left: 0;
+        max-width: 460px;
+    }
+    .faq-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+</style>
+
+</head>
+<body>
+    
+    <div class = "main-wrapper">
+        <div class = "container">
+            <div class = "faq-title"><h1 style="font-size:60px">Resume Preparation</h1></div>
+            <div class = "faq-content">
+                <div class = "faq-left-content">
+                    <img src = "https://cdni.iconscout.com/illustration/premium/thumb/hr-3465563-2912094.png">
+                    <p><b>For most job-seekers, a good resume is what stands a dream job. Get your resume right, and you’ll be getting replies from every other company you apply to.
+
+If your resume game is weak, though, you’ll end up sitting around for weeks, maybe even months, before you even get a single response.</b></p>
+                </div>
+
+                <div class = "faq-right-content">
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">How to Write a Resume - Basic Steps</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            <ol>
+                <li>- Pick the Right Resume Format & Layout</li>
+                <li>- Mention Your Personal Details & Contact Information</li>
+                <li>- Use a Resume Summary or Objective</li>
+                <li>- List Your Work Experience & Achievements</li>
+                <li>- Mention Your Top Soft & Hard Skills</li>
+                <li>- Include Additional Resume Sections - Languages, Hobbies, etc.</li>
+                <li>- Tailor Your Information For the Job Ad</li>
+                <li>- Craft a Convincing Cover Letter</li>
+                <li>- Proofread Your Resume and Cover Letter</li>
+            </ol>
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">What is the Best Resume Layout?</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            - <b>One page in length.</b> You should only go for 2 pages if you really, really believe that it’ll add significant value. HR managers in big firms get around 1,000+ resumes per month. They’re not going to spend their valuable time reading your life story!
+</br>- <b>Clear section headings.</b> Pick a heading (H2, for example) and use it for all the section headers.
+</br>- <b>Ample white-space.</b> Especially around the margins.
+</br>- <b>Easy-to-read font.</b> We’d recommend sticking to what stands out, but not too much. Do: Ubuntu, Roboto, Overpass, etc. <b>Don’t</b> (ever): Comic Sans
+</br>- <b>Pick the right font size.</b> As a rule of thumb, go for 11 - 12 pt for normal text, and 14 - 16 pt for section titles.
+</br>- <b>As a rule of thumb.</b> Save your resume as PDF. Word is a popular alternative, but it has a good chance of messing up your resume formatting.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">What to Mention on Your Resume</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            <p>
+                        <ul>
+                <li>- Contact Information</li>
+                <li>- Professional Resume Summary or Objective</li>
+                <li>- Work Experience (and Achievements)</li>
+                <li>- Education</li>
+                <li>- Skills</li>
+                <li>- Optional Sections - Languages, Publications, Hobbies, etc.</li>
+            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Contact Information</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            <p>The most critical section in your resume is the “contact information.” Even if you get everything else right, you’re not going to go far if the HR manager can’t get in touch with you because you misspelled your email.</p>
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Resume Summary or Objective</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            A resume objective is, in a nutshell, the goal of your resume. It communicates your motivation for getting into a new field. As with a resume summary, a resume objective should be around 2-3 sentences.
+                           </br> A resume objective is the go-to for anyone that either has no work experience or is going through a career change.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Work Experience</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            <ul>
+                <li><b>- Job Title/Position -</b> Your job title goes on top of each work experience entry. When the HR manager scans your resume, you want them to know, at a glance, that you have relevant work experience for the job.</li>
+                <li><b>- Company Name / Location / Description -</b> Then, you mention the name of the relevant employer, as well as the location of the office you work/have worked in. In some cases, you may also want to briefly describe the company, if the organization is not a famous household name. </li>
+                <li><b>- Achievements and Responsibilities -</b> This is the core of each work experience entry. Depending on your field, you want to list either your achievements or responsibilities. We’ll get more into the how’s and why’s of this in a bit.</li>
+                <li><b>- Dates Employed -</b> The timeframe of your employment in each company. Not sure about the exact dates you worked somewhere? Don’t worry - you don’t have to be accurate by the day, as long as it’s close. The standard format expected by recruiters and employers is mm/yyyy (this is especially important when your job application will be parsed by an Applicant Tracking System). </li>
+            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Emphasize Your Know-How with the Skills Section</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            <b>Step 1</b> - List Hard Skills with Experience Levels. For each hard skill you list, you want to mention your proficiency level:
+
+As a rule of thumb, you can divide them by:
+
+<br/>
+<b>Beginner</b> - You have some experience with the skill, whether it’s from some entry-level practice or classroom education.
+
+<b>Intermediate</b> - You’ve used the skill in a work environment with a good level of understanding.
+
+<br/>
+<b>Advanced</b> - You’re the go-to person for the skill in your office. You can coach other employees, and understand the skill on a high level.
+</br>
+<b>Expert</b> - You’ve applied this skill in more than a handful of different projects & organizations. You’re the go-to person for advice about the skill, not just in your office, but even amongst some of the best professionals in your field.
+
+Make sure to NEVER lie about your skill levels. Otherwise, it’s going to be pretty awkward both for you and your employer.
+
+</br>
+<b>Step 2</b> - Tailor Your Skills to the Job. You might have some super rare, awesome skills, but they’re not always going to be useful. For example, it’s awesome that you know accounting, but would you really need it at your new job as a line cook? Exactly!
+
+Take a look at the job ad and list 2-3 essential skills required for the job.
+
+If you’re qualified, make sure to mention all relevant skills with respective proficiency levels in your “Skills” section.
+</br>
+<b>Step 3</b> - Include Some Universal Skills - “Universal Skills” are the type of skills useful for almost any job out there. These are both soft skills (leadership, teamwork, critical thinking, etc.) and hard skills (Excel, Powerpoint, Photoshop, writing, etc.). Whatever job you’re applying to, chances are, these skills will in one way or another come in handy, so feel free to include them, even if they’re not specifically required for the position.
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">Perfecting Your Resume - FREE Checklist</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            <ol>
+                <li>- Does your contact information section have all the must-have information?</li>
+                <li>- Is your contact email professional? E.g.: firstname+lastname@email.com</li>
+                <li>- Are you using the right resume format?</li>
+                <li>- Is your resume 1-2 pages?</li>
+                <li>- Did you include all the must-have sections in your resume? </li>
+                <li>- Did you list only the most relevant work experiences?</li>
+                <li>- Did you list achievements instead of responsibilities?</li>
+                <li>- Did you tailor your resume to the job ad you’re applying for?</li>
+                <li>- Did you mention the right amount of work experience in your resume?</li>
+                <li>- Did you list your education in your resume?</li>
+                <li>- Did you list all the right skills for the position you’re applying for?</li>
+                <li>- Did you add any other important resume sections?</li>
+                <li>- And finally, did you proof-read your resume? We’d recommend asking a friend or using software like Grammarly.</li>
+            </ol>
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">How to Write a Convincing Cover Letter</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+
+<b>Introduce yourself (and leave an impression)</b> - As a start, give a brief run-down on your work experience and mention why you’re interested in working for the company you’re applying for. You can also mention 1-2 of your top professional achievements to leave a good first impression.
+</br><b>Explain how you’d excel at the job</b> - Identify the top 3 requirements in the job ad. Then, dedicate one paragraph to explaining how you fulfil each requirement. So for example, if the requirement is “Facebook Advertising Experience,” mention how you have done Facebook ads in the past and how you’ve excelled at it.
+</br><b>Wrap it up and say thanks</b> - Thank the reader for reading your cover letter and propose the next steps. For example, “If you’d like to know more about my experienc
+                        </div>
+                    </div>
+
+                    <div class = "faq-item">
+                        <div class = "faq-item-head">
+                            <span class = "faq-item-text">How to Ace Your Next Interview</span>
+                            <span class = "faq-item-icon">
+                                <i class = "fa fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class = "faq-item-body">
+                            <p>- You’ve perfected both your resume & cover letter. Now, it’s time for the next (and final) step - the dreaded job interview.
+
+</br>- Whether you’re an extrovert or an introvert, you probably hate the interviewing process. After all, sitting there while someone’s prodding into your past experiences and judging the hell out of you isn’t the most fun experience.
+
+</br>- Did you know, though, that most interviewers ask the same questions? Yep - all you have to do is learn how to answer some of the most common interview questions, and you’ll be an interview away from landing your dream job!</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src = "script.js"></script>
+
+    <script>
+        const faqItemHead = document.querySelectorAll('.faq-item-head');
+
+
+faqItemHead.forEach((head, index) => {
+    head.addEventListener('click', () => {
+        let icon = head.querySelector('.faq-item-icon').firstElementChild;
+        if(icon.className == "fa fa-chevron-down"){
+            head.nextElementSibling.classList.add('show-para');
+            icon.className = "fa fa-chevron-up";
+        } else if(icon.className == "fa fa-chevron-up"){
+            head.nextElementSibling.classList.remove('show-para');
+            icon.className = "fa fa-chevron-down";
+        }
+    });
+});
+
+</script>
+
+
+</body>
+</html>
