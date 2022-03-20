@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta name="viewport"content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>News Slider</title>
+		<link href="css/style.css"rel="stylesheet"type="text/css"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" crossorigin="anonymous" />
+		<script src="https://code.jquery.com/jquery-1.12.4.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" crossorigin="anonymous"></script>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Oswald', sans-serif !important;
+	display: flex;
+	height: 100vh;
+	align-items: center;
+}
+
+.news-wrap {
+	width: 100%;
+	padding: 30px 0;
+}
+
+.news-grid {
+	width: auto;
+	position: relative;
+	background: #fff;
+	border-radius: 5px;
+	overflow: hidden;
+	border: 1px solid #ddd;	/*box-shadow: 0px 10px 30px 0px rgba(50, 50, 50, 0.16);*/
+	margin: 10px;
+}
+
+.news-grid-image {
+	width: 100%;
+	height: 280px;
+	overflow: hidden;
+}
+
+.news-grid-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: .5s;
+}
+
+
+
+.news-grid-box h1 {
+	color: rgb(255, 255, 255);
+	font-size: 30px;
+	font-weight: 400;
+	letter-spacing: 2px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba(255, 255, 255, .3);
+	margin-bottom: 5px;
+}
+
+.news-grid-box p {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 0px;
+}
+
+.news-grid-txt {
+	padding: 25px;
+}
+
+
+
+.news-grid-txt h2 {
+	color: #111;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin: 10px 0px 5px 0px;
+}
+
+.news-grid-txt ul {
+	padding: 0;
+	margin: 0;
+}
+
+.news-grid-txt ul li {
+	list-style: none;
+	display: inline-block;
+	color: #999;
+	font-size: 14px;
+	font-weight: 300;
+	margin: 8px 10px 8px 0px;
+	letter-spacing: 1px;
+}
+
+
+
+.news-grid-txt p {
+	color: #222;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 170%;
+	letter-spacing: 1.5px;
+	border-bottom: 1px solid #ececec;
+	padding-bottom: 15px;
+	margin-bottom: 25px;
+}
+
+.news-grid-txt a {
+	color: #fff;
+	background: #9acc26;
+	padding: 8px 20px;
+	border-radius: 50px;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 30px;
+	letter-spacing: 1px;
+	text-decoration-line: none;
+	transition: .5s;
+}
+
+/*Hover-Section*/
+.news-grid:hover .news-grid-box {
+	left: 15px;
+	transition: .5s;
+}
+
+.news-grid:hover .news-grid-image img {
+	filter: grayscale(1);
+	transform: scale(1.1);
+	transition: .5s;
+}
+
+.news-grid:hover .news-grid-txt a {
+	text-decoration-line: none;
+	color: #fff;
+	letter-spacing: 2px;
+	transition: .5s;
+}
+
+/*OWL*/
+.owl-controls .owl-buttons {
+	position: relative;
+}
+
+.owl-controls .owl-prev {
+	position: absolute;
+	left: -40px;
+	bottom: 230px;
+	padding: 8px 17px;
+	background: #cc26b6;
+	border-radius: 50px;
+	transition: .5s;
+}
+
+.owl-controls .owl-next {
+	position: absolute;
+	right: -40px;
+	bottom: 230px;
+	padding: 8px 17px;
+	background: #cc26b6;
+	border-radius: 50px;
+	transition: .5s;
+}
+
+.owl-controls .owl-prev:after, .owl-controls .owl-next:after {
+	content: '\f104';
+	font-family: FontAwesome;
+	color: #fff;
+	font-size: 16px;
+}
+
+.owl-controls .owl-next:after {
+	content: '\f105';
+}
+
+.owl-controls .owl-prev:hover, .owl-controls .owl-next:hover {
+	background: #000;
+}
+
+</style>
+
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div id="news-slider" class="owl-carousel">
+						<!-- 1 -->
+						<div class="news-grid">
+							<div class="news-grid-image"><img src="https://searchengineland.com/figz/wp-content/seloads/2016/06/Google-Gay-Pride-Month.png" alt="">
+								<div class="news-grid-box">
+						
+								</div></div>
+								<div class="news-grid-txt">
+									
+									<h2>Google</h2>
+									
+									<p>In collaboration with institutions from all over the world, explore and celebrate the LGBTQ+ movement on Google Arts & Culture. This year, cultural partners are spotlighting the iconography behind Pride, sharing the history of the original flag, while also focusing on other inclusive symbols used today.</p>
+									<a href="https://pride.google/">Read More</a>
+								</div>
+							</div>
+							<!-- 2 -->
+							<div class="news-grid">
+								<div class="news-grid-image"><img src="https://sanfrancisco.cbslocal.com/wp-content/uploads/sites/15116056/2019/08/oracle-silicon-valley-pride.jpg" alt="">
+									<div class="news-grid-box">
+										
+									</div></div>
+									<div class="news-grid-txt">
+										
+                                        <h2>Oracle</h2>
+										
+										<p>We’re proud to support and uplift the LGBTQ+ community at work and beyond. We believe that everyone—regardless of their sexual orientation, gender identity, or expression—should be free to live authentically and feel like they belong.</p>
+										<a href="https://www.oracle.com/in/corporate/careers/diversity-inclusion/lgbtq/">Read More</a>
+									</div>
+								</div>
+								<!-- 3 -->
+								<div class="news-grid">
+									<div class="news-grid-image"><img src="https://assets.ey.com/content/dam/ey-sites/ey-com/en_ca/topics/proud-to-belong/ey-building-with-pride-colors.jpg.rendition.690.460.jpg" alt="">
+										<div class="news-grid-box">
+											
+										</div></div>
+										<div class="news-grid-txt">
+										
+											<h2>EY</h2>
+											
+											<p>Our new research in collaboration with the New York University School of Law’s Center for Diversity, Inclusion and Belonging explores three models for multinational companies striving to advance LGBT+ inclusion in their workplaces.</p>
+											<a href="https://www.ey.com/en_in/diversity-inclusiveness/can-you-apply-a-globally-consistent-policy-across-an-inconsistent-world">Read More</a>
+										</div>
+									</div>
+									<!-- 4 -->
+									<div class="news-grid">
+										<div class="news-grid-image"><img src="https://cf-images.us-east-1.prod.boltdns.net/v1/static/3755095886001/7ebaef41-d987-4348-b7f7-4a4c5356c553/fb3d5460-fb85-42b2-9dd2-4b43299d2f48/1280x720/match/image.jpg" alt="">
+											<div class="news-grid-box">
+												
+											</div></div>
+											<div class="news-grid-txt">
+											
+												<h2>KPMG</h2>
+											
+												<p>While we’re aware of the need to empower change across KPMG firms, we also recognize the role we can play to help accelerate greater inclusion and diversity across business and within our communities.</p>
+												<a href="https://home.kpmg/xx/en/home/about/corporate-reporting/our-impact-plan/people/inclusion-and-diversity.html">Read More</a>
+											</div>
+										</div>
+										<!-- 5 -->
+										<div class="news-grid">
+											<div class="news-grid-image"><img src="https://www.insidetelecom.com/wp-content/uploads/2021/08/Microsofts-Power-Apps.jpg" alt="">
+												<div class="news-grid-box">
+													
+												</div></div>
+												<div class="news-grid-txt">
+												
+													<h2>Microsoft</h2>
+													
+													<p>Although it can be easier to focus only on ourselves in moments of crisis, the LGBTQI+ communities at Microsoft believes that true power is driven by coming together</p>
+													<a href="https://www.microsoft.com/en-us/pride">Read More</a>
+												</div>
+											</div>
+											<!-- 6 -->
+											<div class="news-grid">
+												<div class="news-grid-image"><img src="https://pbs.twimg.com/media/FKa6zwhXwAExw6V.jpg" alt="">
+													<div class="news-grid-box">
+														
+													</div></div>
+													<div class="news-grid-txt">
+														
+														<h2>Infosys</h2>
+														
+														<p>We foster a culture of equality where our people—regardless of their gender identity or sexual orientation—can bring their authentic selves to work. Infosys is a signatory to the UN Standards of Conduct for Business Tackling Discrimination against Lesbian, Gay, Bi, Trans, and Intersex People.</p>
+														<a href="https://www.infosys.com/about/diversity-inclusion/lgbtqia.html">Read More</a>
+													</div>
+												</div>
+												<!-- 7 -->
+												
+															<!-- 10 -->
+															<div class="news-grid">
+																<div class="news-grid-image"><img src="https://cms.qz.com/wp-content/uploads/2019/09/amazonpride-e1568415207964.jpg?quality=75&strip=all&w=410&h=232" alt="">
+																	
+																	<div class="news-grid-txt">
+																		
+																	
+																</div></div>
+                                                                <div class="news-grid-txt">
+																		<h2>Amazon</h2>
+																		
+																		<p>The rights of LGBTQ+ people must be protected.
+We believe that everyone—regardless of their sexual orientation, gender identity, or expression—should be free to live authentically and feel like they belong.</p>
+																		<a href="https://www.amazon.jobs/en/landing_pages/pride-at-aws">Read More</a>
+																	</div>
+																</div>
+
+            <div class="news-grid">
+												<div class="news-grid-image"><img src="https://www.exposedbycmd.org/wp-content/uploads/2021/04/walmart-pride-parade.png" alt="">
+													<div class="news-grid-box">
+														
+													</div></div>
+													<div class="news-grid-txt">
+														
+														<h2>Walmart</h2>
+														
+														<p>PRIDE stands for Promoting Respect, Inclusion, Diversity and Equity and is an associate resource group for all associates (lesbian, gay, bisexual, transgender and straight allies) that aims to make Walmart the most diverse, inclusive company it can be. I think it’s working.</p>
+														<a href="https://careers.walmart.com/love-wins-walmart-pride-walmart-proud">Read More</a>
+													</div>
+												</div>
+
+            <div class="news-grid">
+												<div class="news-grid-image"><img src="https://www.verizon.com/about/sites/default/files/connected-by-pride-image.jpg" alt="">
+													<div class="news-grid-box">
+														
+													</div></div>
+													<div class="news-grid-txt">
+														
+														<h2>Verizon</h2>
+														
+														<p>Our ERGs addresses the needs and concerns of our LGBTQ+ V Teamers while fostering a work environment where everyone is treated with respect and dignity.</p>
+														<a href="https://www.verizon.com/about/news/5-reasons-verizon-was-named-best-place-work-lgbtq-equality">Read More</a>
+													</div>
+												</div>
+
+            
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- Script-Section -->
+												<script type="text/javascript">
+													$(document).ready(function(){
+														$("#news-slider").owlCarousel({
+															items:3,
+															navigation:true,
+															navigationText:["",""],
+															autoPlay:true
+														});
+													});
+												</script>
+											</body>
+										</html>
